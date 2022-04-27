@@ -1,11 +1,11 @@
 body {
-    margin: 0px;
-    background-color: #ffc048;
-    height: 100VH;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Open sans';
+  margin: 0px;
+  background-color: #ffc048;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open sans";
 }
 .container {
   display: flex;
@@ -17,25 +17,25 @@ body {
   width: 450px;
   height: 600px;
   border-radius: 7px;
-  box-shadow: 0px 5px 30px -5px rgba(0,0,0,0.2);
+  box-shadow: 0px 5px 30px -5px rgba(0, 0, 0, 0.2);
   text-align: center;
   position: relative;
   padding-bottom: 70px;
   max-height: 600px;
 }
 .container h1 {
-    padding-bottom: 25px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    font-family: 'Montserrat';
-    line-height: 1.2em;
-    font-weight: 700;
+  padding-bottom: 25px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-family: "Montserrat";
+  line-height: 1.2em;
+  font-weight: 700;
 }
 
 /* -------------- BLOC FORMULAIRE ------------- */
 .blocForm {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 #formPages {
   width: 100%;
@@ -63,8 +63,8 @@ body {
   cursor: pointer;
 }
 .delete {
-    background-color: #f60000;
-    color: #fff;
+  background-color: #f60000;
+  color: #fff;
 }
 
 /* -------------- CONTAINER DE PAGES ------------- */
@@ -74,17 +74,17 @@ body {
   overflow-y: scroll;
 }
 .container-pages .page input {
-    margin: 0px !important;
-    margin-right: 9px !important;
+  margin: 0px !important;
+  margin-right: 9px !important;
 }
 .container-pages .page:not(:last-child) {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 .container-pages .page {
-    padding: 10px 15px;
-    display: flex;
-    align-items: center;
-    line-height: 1.2em;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  line-height: 1.2em;
 }
 
 /* -------------- NAVIGATION BAS DE PAGE ------------- */
@@ -113,19 +113,3 @@ body {
 .blocBottom button:hover {
   background-color: #b72828;
 }
-
-    © 2022 GitHub, Inc.
-
-    Terms
-    Privacy
-    Security
-    Status
-    Docs
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
-Loading complete
