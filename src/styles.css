@@ -1,0 +1,131 @@
+body {
+    margin: 0px;
+    background-color: #ffc048;
+    height: 100VH;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open sans';
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  background-color: #fff;
+  width: 450px;
+  height: 600px;
+  border-radius: 7px;
+  box-shadow: 0px 5px 30px -5px rgba(0,0,0,0.2);
+  text-align: center;
+  position: relative;
+  padding-bottom: 70px;
+  max-height: 600px;
+}
+.container h1 {
+    padding-bottom: 25px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-family: 'Montserrat';
+    line-height: 1.2em;
+    font-weight: 700;
+}
+
+/* -------------- BLOC FORMULAIRE ------------- */
+.blocForm {
+    display: flex;
+    flex-direction: row;
+}
+#formPages {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#formPages input {
+  font-size: 1em;
+  color: #000;
+  height: 33px;
+  border-radius: 3px 0 0 3px;
+  border: 1px solid #d7d7d7;
+  box-sizing: border-box;
+  width: 250px;
+  border-right: 0;
+  padding: 5px 10px;
+}
+.blocForm button {
+  height: 33px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  width: 65px;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+}
+.delete {
+    background-color: #f60000;
+    color: #fff;
+}
+
+/* -------------- CONTAINER DE PAGES ------------- */
+.container-pages {
+  padding: 5px 0px;
+  margin: 25px 0px;
+  overflow-y: scroll;
+}
+.container-pages .page input {
+    margin: 0px !important;
+    margin-right: 9px !important;
+}
+.container-pages .page:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.container-pages .page {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    line-height: 1.2em;
+}
+
+/* -------------- NAVIGATION BAS DE PAGE ------------- */
+.blocBottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px 20px;
+  box-sizing: border-box;
+}
+.blocBottom button {
+  background-color: #d63535;
+  border: none;
+  height: 28px;
+  color: #fff;
+  font-weight: 700;
+  font-family: sans-serif;
+  width: 105px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.blocBottom button:hover {
+  background-color: #b72828;
+}
+
+    © 2022 GitHub, Inc.
+
+    Terms
+    Privacy
+    Security
+    Status
+    Docs
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
+Loading complete
