@@ -9,10 +9,12 @@ getStore();
 
 // --- EVENT LISTENER
 formulaire.addEventListener("submit", addPage);
+
 deleteProject.addEventListener("click", function () {
   localStorage.removeItem("items");
   getStore();
 });
+
 containerPages.addEventListener("click", function (e) {
   if (e.target.tagName.toUpperCase() === "INPUT") {
     if (e.target.parentNode.classList.contains("checked")) {
@@ -33,12 +35,8 @@ function addPage(e) {
   if (inputForm.value !== "") {
     const content = document.createElement("div");
     content.classList.add("page");
-    let idInput = inputForm.value
-      .toLowerCase()
-      .split("")
-      .filter((letter) => /\S/.test(letter))
-      .join("");
-    content.innerHTML = `<input type="checkbox" id="${idInput}"/><label for="${idInput}" class='titlePage'>${inputForm.value}</label>`;
+    let idInput = token();
+    content.innerHTML = `<input type="checkbox" id="${idInput}"/><input type="text" class="titlePage" value="${inputForm.value}"/>`;
     containerPages.appendChild(content);
     setStore();
   }
@@ -58,15 +56,19 @@ function nbPages() {
   countPages();
 }
 
+// TOKEN
+const rand = () => Math.random().toString(36).substr(2);
+const token = () => rand() + rand();
+
 // STORE
 function setStore() {
   const items = containerPages.innerHTML;
   localStorage.setItem("items", items);
 }
+
 function getStore() {
   const itemStore = localStorage.getItem("items");
   containerPages.innerHTML = itemStore;
-
   const checked = containerPages.querySelectorAll(".checked input");
   numberChecked = checked.length;
   checked.forEach((input) => (input.checked = true));

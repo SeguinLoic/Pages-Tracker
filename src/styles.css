@@ -67,6 +67,12 @@ body {
   color: #fff;
 }
 
+/* -------------- INPUT TITRE PAGE ------------- */
+.titlePage {
+  border: none;
+  font-size: 1em;
+}
+
 /* -------------- CONTAINER DE PAGES ------------- */
 .container-pages {
   padding: 5px 0px;
