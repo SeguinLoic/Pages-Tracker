@@ -1,3 +1,3 @@
 # Pages-Tracker
 
-<https://pages-tracker.netlify.app/ target="\_blank">
+<https://pages-tracker.netlify.app/>
