@@ -1,3 +1,5 @@
+import confetti from "canvas-confetti";
+
 const formulaire = document.getElementById("formPages");
 const inputForm = formulaire.querySelector("#nomPage");
 const containerPages = document.querySelector(".container-pages");
@@ -6,6 +8,10 @@ const deleteProject = document.querySelector(".delete");
 let numberPages = 0;
 let numberChecked = 0;
 getStore();
+
+// --- CONFETTI
+const myCanvas = document.createElement("canvas");
+document.body.appendChild(myCanvas);
 
 // --- EVENT LISTENER
 formulaire.addEventListener("submit", addPage);
@@ -54,6 +60,11 @@ function addPage(e) {
 // COUNT PAGE
 function countPages() {
   containerCount.innerHTML = `${numberChecked} / ${numberPages}`;
+  if (numberChecked === numberPages && numberChecked > 0) {
+    console.log("finito");
+    const myConfetti = confetti.create(myCanvas, { resize: true });
+    myConfetti();
+  }
 }
 
 // UPDATE NB PAGES
