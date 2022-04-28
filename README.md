@@ -1,3 +1,3 @@
 # Pages-Tracker
 
-<https://pages-tracker.netlify.app/>
+<a href="https://pages-tracker.netlify.app/" target="_blank">Testez l'application</a>
