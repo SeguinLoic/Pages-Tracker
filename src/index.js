@@ -16,7 +16,7 @@ deleteProject.addEventListener("click", function () {
 });
 
 containerPages.addEventListener("click", function (e) {
-  if (e.target.tagName.toUpperCase() === "INPUT") {
+  if (e.target.type === "checkbox") {
     if (e.target.parentNode.classList.contains("checked")) {
       e.target.parentNode.classList.remove("checked");
       numberChecked--;
@@ -27,6 +27,13 @@ containerPages.addEventListener("click", function (e) {
     countPages();
     setStore();
   }
+  if (e.target.type === "text") {
+    e.target.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        updatePagesName(e.target);
+      }
+    });
+  }
 });
 
 // ADD PAGE
@@ -35,8 +42,8 @@ function addPage(e) {
   if (inputForm.value !== "") {
     const content = document.createElement("div");
     content.classList.add("page");
-    let idInput = token();
-    content.innerHTML = `<input type="checkbox" id="${idInput}"/><input type="text" class="titlePage" value="${inputForm.value}"/>`;
+    content.id = token();
+    content.innerHTML = `<input type="checkbox"/><input type="text" class="titlePage" value="${inputForm.value}"/>`;
     containerPages.appendChild(content);
     setStore();
   }
@@ -56,6 +63,14 @@ function nbPages() {
   countPages();
 }
 
+// UPDATE NAME PAGES
+function updatePagesName(elem) {
+  const name = elem.value;
+  elem.setAttribute("value", name);
+  elem.blur();
+  setStore();
+}
+
 // TOKEN
 const rand = () => Math.random().toString(36).substr(2);
 const token = () => rand() + rand();
@@ -69,7 +84,9 @@ function setStore() {
 function getStore() {
   const itemStore = localStorage.getItem("items");
   containerPages.innerHTML = itemStore;
-  const checked = containerPages.querySelectorAll(".checked input");
+  const checked = containerPages.querySelectorAll(
+    ".checked input[type=checkbox]"
+  );
   numberChecked = checked.length;
   checked.forEach((input) => (input.checked = true));
 
