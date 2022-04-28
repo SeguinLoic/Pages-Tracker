@@ -78,6 +78,8 @@ body {
   padding: 5px 0px;
   margin: 25px 0px;
   overflow-y: scroll;
+  scrollbar-color: #f3f3f3 #fff;
+  scrollbar-width: thin;
 }
 .container-pages .page input {
   margin: 0px !important;
@@ -91,6 +93,7 @@ body {
   display: flex;
   align-items: center;
   line-height: 1.2em;
+  margin-right: 10px;
 }
 
 /* -------------- NAVIGATION BAS DE PAGE ------------- */
