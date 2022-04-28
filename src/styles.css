@@ -72,6 +72,38 @@ body {
   border: none;
   font-size: 1em;
 }
+.deletePage {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  transition: all 0.3s;
+  opacity: 0;
+  cursor: pointer;
+}
+.deletePage::before,
+.deletePage::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #eaeaea;
+  position: absolute;
+}
+.deletePage::before {
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.deletePage::after {
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+}
+.page:hover .deletePage {
+  opacity: 1;
+}
 
 /* -------------- CONTAINER DE PAGES ------------- */
 .container-pages {
@@ -94,6 +126,7 @@ body {
   align-items: center;
   line-height: 1.2em;
   margin-right: 10px;
+  position: relative;
 }
 
 /* -------------- NAVIGATION BAS DE PAGE ------------- */

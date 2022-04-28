@@ -31,7 +31,6 @@ containerPages.addEventListener("click", function (e) {
       numberChecked++;
     }
     countPages();
-    setStore();
   }
   if (e.target.type === "text") {
     e.target.addEventListener("keypress", function (e) {
@@ -40,16 +39,19 @@ containerPages.addEventListener("click", function (e) {
       }
     });
   }
+  if (e.target.tagName === "SPAN") {
+    deletePage(e.target.parentNode);
+  }
 });
 
-// ADD PAGE
+// --- ADD PAGE
 function addPage(e) {
   e.preventDefault();
   if (inputForm.value !== "") {
     const content = document.createElement("div");
     content.classList.add("page");
     content.id = token();
-    content.innerHTML = `<input type="checkbox"/><input type="text" class="titlePage" value="${inputForm.value}"/>`;
+    content.innerHTML = `<input type="checkbox"/><input type="text" class="titlePage" value="${inputForm.value}"/><span class="deletePage"></span>`;
     containerPages.appendChild(content);
     setStore();
   }
@@ -57,7 +59,7 @@ function addPage(e) {
   inputForm.value = "";
 }
 
-// COUNT PAGE
+// --- COUNT PAGE
 function countPages() {
   containerCount.innerHTML = `${numberChecked} / ${numberPages}`;
   if (numberChecked === numberPages && numberChecked > 0) {
@@ -65,16 +67,17 @@ function countPages() {
     const myConfetti = confetti.create(myCanvas, { resize: true });
     myConfetti();
   }
+  setStore();
 }
 
-// UPDATE NB PAGES
+// --- UPDATE NUMBER PAGES
 function nbPages() {
   const elem = containerPages.querySelectorAll(".page");
   numberPages = elem.length;
   countPages();
 }
 
-// UPDATE NAME PAGES
+// --- UPDATE NAME PAGES
 function updatePagesName(elem) {
   const name = elem.value;
   elem.setAttribute("value", name);
@@ -82,11 +85,21 @@ function updatePagesName(elem) {
   setStore();
 }
 
-// TOKEN
+// -- DELETE PAGE
+function deletePage(elem) {
+  if (elem.classList.contains("checked")) {
+    numberChecked--;
+  }
+  elem.remove();
+  nbPages();
+  setStore();
+}
+
+// --- TOKEN
 const rand = () => Math.random().toString(36).substr(2);
 const token = () => rand() + rand();
 
-// STORE
+// --- STORE
 function setStore() {
   const items = containerPages.innerHTML;
   localStorage.setItem("items", items);
@@ -100,6 +113,5 @@ function getStore() {
   );
   numberChecked = checked.length;
   checked.forEach((input) => (input.checked = true));
-
   nbPages();
 }
