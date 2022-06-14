@@ -71,6 +71,7 @@ body {
 .titlePage {
   border: none;
   font-size: 1em;
+  width: 85%;
 }
 .deletePage {
   width: 20px;
